@@ -15,12 +15,12 @@
 
 # Simulación de Bolillero
 
-Programa diseñado para simular el funcionamiento de bolilleros con bolillas numeradas de 0 a N, permitiendo validar jugadas, realizar juegos masivos y ejecutar simulaciones concurrentes mediante el uso de hilos y clonación de objetos [1-3].
+Programa diseñado para simular el funcionamiento de bolilleros con bolillas numeradas de 0 a N, permitiendo validar jugadas, realizar juegos masivos y ejecutar simulaciones concurrentes mediante el uso de hilos y clonación de objetos.
 
 ## Comenzando 🚀
 
 Clonar el repositorio github, desde Github Desktop o ejecutar en la terminal o CMD:
-git clone https://github.com/Erick-2008/TP---Bolillero.git
+git clone https://github.com/Erick-2008/TP-Bolillero.git
 
 ### Pre-requisitos 📋
 
@@ -40,7 +40,7 @@ Se utilizaron herramientas estándar de desarrollo para C# y gestión de hilos p
 
 ## Versionado 📌
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/ET12DE1Computacion/Bolillero/tags).
+Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles.
 
 ## Autores ✒️
 
@@ -48,4 +48,4 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 
 ## Licencia 📄
 
-Este proyecto está bajo Licencia - mira el archivo [LICENSE.md](LICENSE.md) para detalles.
+Este proyecto está bajo la Licencia (GPL-3.0 license) - mira el archivo [LICENSE.md](LICENSE) para detalles.
