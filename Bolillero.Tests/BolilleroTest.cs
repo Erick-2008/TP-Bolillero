@@ -50,8 +50,8 @@ namespace Bolillero.Tests
         public void GanarNVecesTest()
         {
             // Con la jugada {0, 1}, se juega 1 vez y se verifica 1 victoria
-            int victorias = _bolillero.JugarNVeces(new List<int> { 0, 1 }, 1);
-            Assert.Equal(1, victorias);
+            long victorias = _bolillero.JugarNVeces(new List<int> { 0, 1 }, 1);
+            Assert.Equal(1L, victorias);
         }
     }
 }

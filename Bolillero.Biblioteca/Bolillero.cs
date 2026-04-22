@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Bolillero.Biblioteca
 {
-    public class Bolillero
+    public class Bolillero : ICloneable
     {
         public List<int> Adentro { get; set; } = new List<int>();
         public List<int> Afuera { get; set; } = new List<int>();
@@ -13,6 +14,14 @@ namespace Bolillero.Biblioteca
         {
             for (int i = 0; i < cantidadBolillas; i++) Adentro.Add(i);
             Azar = azar;
+        }
+
+        public object Clone()
+        {
+            var clon = new Bolillero(0, this.Azar);
+            clon.Adentro = new List<int>(this.Adentro);
+            clon.Afuera = new List<int>(this.Afuera);
+            return clon;
         }
 
         public int SacarBolilla()
@@ -28,6 +37,8 @@ namespace Bolillero.Biblioteca
         {
             Adentro.AddRange(Afuera);
             Afuera.Clear();
+            // Ordenar para que el azar "Primero" siempre encuentre las bolillas en orden
+            Adentro.Sort(); 
         }
 
         public bool Jugar(List<int> jugada)
@@ -36,7 +47,7 @@ namespace Bolillero.Biblioteca
             {
                 if (SacarBolilla() != bolillaEsperada)
                 {
-                    ReIngresar(); // Se restauran para la próxima jugada
+                    ReIngresar();
                     return false;
                 }
             }
@@ -44,10 +55,10 @@ namespace Bolillero.Biblioteca
             return true;
         }
 
-        public int JugarNVeces(List<int> jugada, int cantidadVeces)
+        public long JugarNVeces(List<int> jugada, long cantidadVeces)
         {
-            int victorias = 0;
-            for (int i = 0; i < cantidadVeces; i++)
+            long victorias = 0;
+            for (long i = 0; i < cantidadVeces; i++)
             {
                 if (Jugar(jugada)) victorias++;
             }
