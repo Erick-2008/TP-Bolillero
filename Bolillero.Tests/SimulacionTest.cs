@@ -46,5 +46,18 @@ namespace Bolillero.Tests
             
             Assert.Equal(cantidadTotal, victorias);
         }
+
+        [Fact]
+        public async Task SimularConHilosAsyncGanaSiempreTest()
+        {
+            var bolillero = new Bolillero.Biblioteca.Bolillero(10, new Primero());
+            var simulacion = new Simulacion();
+            var jugada = new List<int> { 0, 1 };
+    
+            // El test debe usar 'await' para llamar al nuevo método
+            long victorias = await simulacion.SimularConHilosAsync(bolillero, jugada, 1000, 4);
+    
+            Assert.Equal(1000L, victorias);
+        }
     }
 }
