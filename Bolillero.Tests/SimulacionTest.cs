@@ -59,5 +59,19 @@ namespace Bolillero.Tests
     
             Assert.Equal(1000L, victorias);
         }
+
+        [Fact]
+        public async Task SimularParallelAsyncGanaSiempreTest()
+        {
+            var bolillero = new Bolillero.Biblioteca.Bolillero(10, new Primero());
+            var simulacion = new Simulacion();
+            List<int> jugada = new List<int> { 0, 1 };
+            long cantidad = 1000;
+
+            // Ejecutamos la simulación paralela asincrónica
+            long victorias = await simulacion.SimularParallelAsync(bolillero, jugada, cantidad, 4);
+
+            Assert.Equal(cantidad, victorias);
+        }
     }
 }

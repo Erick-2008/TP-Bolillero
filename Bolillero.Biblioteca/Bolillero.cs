@@ -6,8 +6,8 @@ namespace Bolillero.Biblioteca
 {
     public class Bolillero : ICloneable
     {
-        public List<int> Adentro { get; set; } = new List<int>();
-        public List<int> Afuera { get; set; } = new List<int>();
+        public List<int> Adentro { get; set; } = [];
+        public List<int> Afuera { get; set; } = [];
         public IAzar Azar { get; set; }
 
         public Bolillero(int cantidadBolillas, IAzar azar)
